@@ -9,7 +9,7 @@ export default function AddTransactionForm() {
   const [submitting, setSubmitting] = useState(false);
   const { data: categories } = useSWR<{ categories: Category[] }>(
     "/api/categories",
-    (u) => fetch(u).then((r) => r.json())
+    (u: string) => fetch(u).then((r) => r.json())
   );
 
   async function onSubmit(formData: FormData) {
