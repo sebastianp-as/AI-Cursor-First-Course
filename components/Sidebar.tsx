@@ -4,8 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BarChart3, PlusCircle, Settings, LayoutDashboard } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import type { Route } from "next";
 
-const nav = [
+type NavItem = {
+  href: Route;
+  label: string;
+  icon: any;
+};
+
+const nav: NavItem[] = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
   { href: "/add-transaction", label: "Add Transaction", icon: PlusCircle },
   { href: "/analytics", label: "Analytics", icon: BarChart3 },
